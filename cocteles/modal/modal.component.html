@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="modal fade" #modal id="modalCoctel" tabindex="-1" aria-labelledby="modalCoctelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg border-0">
+
+            <!-- Header -->
+            <div class="modal-header bg-gradient text-white"
+                style="background: linear-gradient(to right, #0d6efd, #6610f2);">
+                <h5 class="modal-title fw-bold" id="modalCoctelLabel">{{ coctelSeleccionado['strDrink'] }}</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Cerrar"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body p-4">
+                <div class="row g-4 align-items-center">
+                    <!-- Imagen -->
+                    <div class="col-md-5 text-center">
+                        <img [src]="coctelSeleccionado['strDrinkThumb']" class="img-fluid rounded-3 shadow-sm w-100"
+                            alt="Imagen del cóctel">
+                    </div>
+
+                    <!-- Detalles -->
+                    <div class="col-md-7">
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item"><strong>ID:</strong> {{ coctelSeleccionado['idDrink'] }}</li>
+                            <li class="list-group-item"><strong>Categoría:</strong> {{ coctelSeleccionado['strCategory']
+                                }}</li>
+                            <li class="list-group-item"><strong>Tipo:</strong> {{ coctelSeleccionado['strAlcoholic'] }}
+                            </li>
+                            <li class="list-group-item"><strong>Vaso:</strong> {{ coctelSeleccionado['strGlass'] }}</li>
+                            <li class="list-group-item">
+                                <strong>Instrucciones:</strong><br>
+                                {{ coctelSeleccionado['strInstructions'] }}
+                            </li>
+                        </ul>
+
+                        <!-- Ingredientes -->
+                        <h6 class="fw-bold mt-3">Ingredientes:</h6>
+                        <ul class="list-group small shadow-sm rounded">
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                                *ngFor="let i of [].constructor(15); let idx = index">
+                                <ng-container *ngIf="coctelSeleccionado['strIngredient' + (idx + 1)]">
+                                    <span>{{ coctelSeleccionado['strIngredient' + (idx + 1)] }}</span>
+                                    <span class="badge bg-primary rounded-pill">
+                                        {{ coctelSeleccionado['strMeasure' + (idx + 1)] || '—' }}
+                                    </span>
+                                </ng-container>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer bg-light rounded-bottom-4">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

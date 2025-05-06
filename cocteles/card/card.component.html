@@ -1,0 +1,30 @@
+<ng-container *ngIf="(cotel?.drinks?.length ?? 0) > 0; else sinResultados">
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let coc of cotel?.drinks">
+                <div class="card h-100 shadow">
+                    <img [src]="coc['strDrinkThumb']" class="card-img-top" alt="Imagen del cóctel" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ coc["strDrink"] }}</h5>
+                        <p class="card-text">
+                            <strong>ID:</strong> {{ coc["idDrink"] }}<br />
+                            <strong>Categoría:</strong> {{ coc["strCategory"] }}<br />
+                            <strong>Tipo:</strong> {{ coc["strAlcoholic"] }}
+                        </p>
+                        <a  (click)="openModal(coc)" class="btn btn-outline-primary btn-sm w-100">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #sinResultados>
+    <div class="container my-5 text-center">
+        <div class="alert alert-info" role="alert">
+            No se encontraron cócteles para esta letra.
+        </div>
+    </div>
+</ng-template>
+
+<app-modal></app-modal>

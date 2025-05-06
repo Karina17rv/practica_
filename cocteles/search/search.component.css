@@ -1,0 +1,43 @@
+.buscador {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Input con diseño elegante */
+.buscador-input {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.buscador-input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Botón con efecto moderno */
+.buscador-boton {
+    padding: 12px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.buscador-boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+.buscador-boton:active {
+    transform: translateY(0);
+    box-shadow: none;
+}

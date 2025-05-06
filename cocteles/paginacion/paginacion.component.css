@@ -1,0 +1,33 @@
+.custom-item {
+    width: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.active-letter {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+    transform: scale(1.1);
+    font-size: 1.1rem;
+}
+
+.custom-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-item:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 576px) {
+    .custom-item {
+        width: 40px;
+    }
+}
